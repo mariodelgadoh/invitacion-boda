@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 <title>Sofía &amp; Andrés · 13 Feb 2027</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
-<!-- html2pdf library for PDF generation -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -20,7 +18,8 @@
   --gold-light:#e8d5a8;
   --border:#e0d5c0;
   --shadow:0 8px 30px rgba(0,0,0,0.05);
-  --shadow-heavy:0 20px 60px rgba(0,0,0,0.3);
+  --shadow-heavy:0 25px 50px rgba(0,0,0,0.3);
+  --shadow-glow:0 0 20px rgba(201,160,61,0.4);
 }
 html{scroll-behavior:smooth}
 body{
@@ -47,38 +46,43 @@ body{
   100%{transform:translateY(-20px) rotate(720deg);opacity:0}
 }
 
-/* ─── ENVELOPE SCREEN MEJORADO ────────────────── */
+/* ─── ENVELOPE SCREEN MEJORADO - MÁS GRANDE ────────────────── */
 #env-screen{
   position:fixed;inset:0;
-  background:linear-gradient(145deg, #f0e8dc 0%, #e0d2c0 100%);
+  background:radial-gradient(ellipse at center, #f2ecd9 0%, #e8ddce 50%, #d6c8b5 100%);
   display:flex;flex-direction:column;
   align-items:center;justify-content:center;
   z-index:50;
-  transition:opacity 1s ease, visibility 1s ease;
+  transition:opacity 1.2s ease, visibility 1.2s ease;
   cursor:pointer;
 }
 #env-screen.gone{opacity:0;visibility:hidden;pointer-events:none}
 
 .env-hint{
-  font-size:11px;letter-spacing:5px;text-transform:uppercase;
-  color:var(--text-medium);margin-top:40px;
+  font-size:12px;letter-spacing:6px;text-transform:uppercase;
+  color:var(--text-medium);margin-top:50px;
   animation:pulse 2s ease infinite;
   font-weight:400;
-  background:rgba(255,255,255,0.3);
-  padding:8px 20px;
-  border-radius:40px;
-  backdrop-filter:blur(4px);
+  background:rgba(255,255,255,0.25);
+  padding:10px 28px;
+  border-radius:50px;
+  backdrop-filter:blur(5px);
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
-@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes pulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.02)}}
 
-/* 3D ENVELOPE MEJORADO */
+/* 3D ENVELOPE - MÁS GRANDE */
 .envelope-wrap{
-  perspective:1500px;
-  width:360px;height:250px;
+  perspective:1800px;
+  width:420px;
+  height:290px;
   cursor:pointer;
   position:relative;
+  margin-bottom:20px;
 }
-@media(max-width:400px){.envelope-wrap{width:300px;height:210px}}
+@media(max-width:500px){
+  .envelope-wrap{width:320px;height:220px;}
+}
 
 .envelope{
   width:100%;height:100%;
@@ -87,96 +91,128 @@ body{
   transition:transform 0.5s cubic-bezier(0.2,0.9,0.4,1.1);
 }
 .envelope:hover{
-  transform:rotateY(-10deg) rotateX(6deg) scale(1.03);
+  transform:rotateY(-12deg) rotateX(8deg) scale(1.02);
 }
 @keyframes envFloat{
-  0%,100%{transform:rotateY(-4deg) rotateX(3deg) translateY(0)}
-  50%{transform:rotateY(4deg) rotateX(-3deg) translateY(-10px)}
+  0%,100%{transform:rotateY(-5deg) rotateX(4deg) translateY(0)}
+  50%{transform:rotateY(5deg) rotateX(-4deg) translateY(-15px)}
 }
 .envelope{
-  animation:envFloat 5s ease-in-out infinite;
+  animation:envFloat 6s ease-in-out infinite;
 }
 
+/* Cuerpo del sobre */
 .env-body{
   position:absolute;inset:0;
-  background:linear-gradient(145deg, #e0ceb5 0%, #c9b594 50%, #b89c7a 100%);
-  border-radius:8px;
-  box-shadow:0 30px 50px rgba(0,0,0,0.25), inset 0 1px 2px rgba(255,255,255,0.4);
-  border:1px solid rgba(255,255,255,0.2);
+  background:linear-gradient(145deg, #e8d5b8 0%, #d4be9a 40%, #c2a880 100%);
+  border-radius:12px;
+  box-shadow:var(--shadow-heavy), inset 0 2px 4px rgba(255,255,255,0.5), inset 0 -2px 4px rgba(0,0,0,0.05);
+  border:1px solid rgba(255,255,255,0.3);
+  overflow:hidden;
 }
 .env-body::before{
-  content:'';position:absolute;inset:0;border-radius:8px;
+  content:'';position:absolute;inset:0;
   background:repeating-linear-gradient(
-    45deg,transparent,transparent 20px,
-    rgba(255,255,255,0.05) 20px,rgba(255,255,255,0.05) 40px
+    45deg,
+    transparent,
+    transparent 25px,
+    rgba(255,255,255,0.08) 25px,
+    rgba(255,255,255,0.08) 50px
   );
+  pointer-events:none;
 }
+.env-body::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 40%, rgba(255,255,255,0.15) 0%, transparent 70%);
+  pointer-events:none;
+}
+
+/* Solapa trasera */
 .env-flap-back{
   position:absolute;bottom:0;left:0;right:0;
-  height:60%;
+  height:62%;
   clip-path:polygon(0 100%,50% 0%,100% 100%);
-  background:linear-gradient(135deg, #c9b594 0%, #b89c7a 100%);
-  border-bottom-left-radius:8px;
-  border-bottom-right-radius:8px;
-  filter:drop-shadow(0 -2px 4px rgba(0,0,0,0.1));
+  background:linear-gradient(135deg, #d4be9a 0%, #c2a880 100%);
+  border-bottom-left-radius:12px;
+  border-bottom-right-radius:12px;
+  filter:drop-shadow(0 -4px 6px rgba(0,0,0,0.1));
 }
+
+/* Solapa frontal (la que se abre) */
 .env-flap{
   position:absolute;top:0;left:0;right:0;
-  height:55%;
+  height:56%;
   clip-path:polygon(0 0,50% 100%,100% 0);
-  background:linear-gradient(135deg, #e8d8c0 0%, #d4c0a0 100%);
+  background:linear-gradient(155deg, #f2e5ce 0%, #e0caa8 50%, #d0b88e 100%);
   transform-origin:top center;
   transform:rotateX(0deg);
-  transition:transform 1.2s cubic-bezier(0.4,0,0.2,1);
+  transition:transform 1.4s cubic-bezier(0.4,0,0.2,1);
   backface-visibility:hidden;
-  border-top-left-radius:8px;border-top-right-radius:8px;
-  z-index:2;
-  box-shadow:inset 0 2px 4px rgba(255,255,255,0.5);
+  border-top-left-radius:12px;
+  border-top-right-radius:12px;
+  z-index:3;
+  box-shadow:inset 0 3px 8px rgba(255,255,255,0.6), inset 0 -2px 4px rgba(0,0,0,0.03);
 }
 .envelope.opening .env-flap{
   transform:rotateX(-180deg);
 }
+
+/* Lados laterales */
 .env-side-l{
   position:absolute;bottom:0;left:0;
-  width:50%;height:70%;
+  width:50%;height:72%;
   clip-path:polygon(0 0,0 100%,100% 100%);
-  background:linear-gradient(90deg, #c2a882, #b08f6a);
+  background:linear-gradient(90deg, #c2a880, #b08f6a);
+  border-bottom-left-radius:8px;
 }
 .env-side-r{
   position:absolute;bottom:0;right:0;
-  width:50%;height:70%;
+  width:50%;height:72%;
   clip-path:polygon(100% 0,0 100%,100% 100%);
-  background:linear-gradient(270deg, #c2a882, #b08f6a);
+  background:linear-gradient(270deg, #c2a880, #b08f6a);
+  border-bottom-right-radius:8px;
 }
+
+/* Iniciales en el sobre */
 .env-initials{
   position:absolute;bottom:22%;left:50%;transform:translateX(-50%);
   font-family:'Playfair Display',serif;
-  font-size:24px;font-weight:500;
-  color:rgba(60,42,31,0.6);
-  letter-spacing:5px;z-index:3;
+  font-size:28px;font-weight:600;
+  color:rgba(60,42,31,0.45);
+  letter-spacing:8px;z-index:5;
   pointer-events:none;
-  text-shadow:0 1px 2px rgba(255,255,255,0.3);
+  text-shadow:0 1px 2px rgba(255,255,255,0.4);
 }
+
+/* Sello de cera - más detallado */
 .seal-wrap{
   position:absolute;
   top:50%;left:50%;
   transform:translate(-50%,-50%);
-  z-index:15;
+  z-index:20;
 }
 .seal{
-  width:85px;height:85px;
-  background:radial-gradient(circle at 35% 35%, #f0d060 0%, #c9a03d 45%, #8b6914 100%);
+  width:100px;height:100px;
+  background:radial-gradient(circle at 35% 35%, #f2d060 0%, #d4af37 35%, #c9a03d 60%, #8b6914 100%);
   border-radius:50%;
-  box-shadow:0 8px 25px rgba(0,0,0,0.35), 0 0 0 3px rgba(212,175,55,0.5), 0 0 0 6px rgba(212,175,55,0.2), inset 0 2px 5px rgba(255,255,255,0.5);
+  box-shadow:0 12px 28px rgba(0,0,0,0.35), 0 0 0 4px rgba(212,175,55,0.5), 0 0 0 8px rgba(212,175,55,0.2), inset 0 3px 6px rgba(255,255,255,0.6);
   display:flex;align-items:center;justify-content:center;
   transition:transform 0.4s cubic-bezier(0.2,0.9,0.4,1.1), box-shadow 0.4s ease;
   cursor:pointer;
 }
 .seal:hover{
   transform:scale(1.08);
-  box-shadow:0 12px 35px rgba(0,0,0,0.4), 0 0 0 4px rgba(212,175,55,0.7), 0 0 0 8px rgba(212,175,55,0.25);
+  box-shadow:0 15px 35px rgba(0,0,0,0.4), 0 0 0 5px rgba(212,175,55,0.7), 0 0 0 10px rgba(212,175,55,0.25), inset 0 3px 8px rgba(255,255,255,0.7);
 }
-.seal svg{width:50px;height:50px;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));}
+.seal svg{
+  width:58px;height:58px;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+@media(max-width:500px){
+  .seal{width:75px;height:75px;}
+  .seal svg{width:45px;height:45px;}
+  .env-initials{font-size:20px;letter-spacing:5px;}
+}
 
 /* TOAST */
 .toast-msg {
@@ -611,7 +647,7 @@ body{
 .venue-name{font-family:'Playfair Display',serif;font-size:18px;color:var(--text-dark);margin-bottom:6px;}
 .venue-addr{font-size:11px;font-weight:300;color:var(--text-medium);line-height:1.6;}
 
-/* DRESS CODE - MUJERES PRIMERO */
+/* DRESS CODE */
 .dress-section{text-align:center;padding:70px 24px}
 .dress-grid {
   display: grid;
@@ -767,7 +803,7 @@ select.finput option{background:var(--bg-card)}
 footer{text-align:center;padding:60px 24px 40px;border-top:1px solid var(--border);}
 .footer-names{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--gold);margin-bottom:8px;}
 .footer-date{font-size:11px;letter-spacing:3px;color:var(--text-light);font-weight:300}
-.admin-btn,.pdf-btn{
+.admin-btn{
   margin-top:20px;
   font-size:9px;
   letter-spacing:2px;
@@ -779,16 +815,11 @@ footer{text-align:center;padding:60px 24px 40px;border-top:1px solid var(--borde
   font-weight:300;
   text-transform:uppercase;
   transition:all .2s;
-  padding:8px 16px;
-  border-radius:30px;
+  padding:10px 24px;
+  border-radius:40px;
   margin:10px 5px;
 }
-.admin-btn:hover,.pdf-btn:hover{color:var(--gold);border-color:var(--gold);}
-
-/* PDF styles (hidden normally) */
-#pdf-content {
-  display: none;
-}
+.admin-btn:hover{color:var(--gold);border-color:var(--gold);}
 
 /* ADMIN OVERLAY */
 #admin-overlay{position:fixed;inset:0;background:rgba(60,42,31,.95);backdrop-filter:blur(12px);z-index:200;display:none;overflow-y:auto;padding:40px 16px;}
@@ -1018,9 +1049,7 @@ footer{text-align:center;padding:60px 24px 40px;border-top:1px solid var(--borde
     <div class="divider" style="margin:14px auto 24px"><div class="div-line"></div><div class="div-gem"></div><div class="div-line"></div></div>
     <h2 class="section-title">Formal <em>elegante</em></h2>
     <div class="dress-grid">
-      <!-- DAMAS PRIMERO -->
       <div class="dress-card"><h3>👗 Damas</h3><ul><li>Vestido largo o midi</li><li>Colores: tonos tierra, mostaza, marfil, azul noche</li><li>Evitar el color blanco (reservado para la novia)</li><li>Zapatos cómodos para jardín (cuña o bloque)</li><li>Accesorios elegantes pero discretos</li></ul><div class="palette-title">Paleta sugerida</div><div class="palette-colors"><div class="color-swatch" style="background:#8b7355" title="Café medio"></div><div class="color-swatch" style="background:#c9a03d" title="Mostaza"></div><div class="color-swatch" style="background:#f5efe6" title="Marfil"></div><div class="color-swatch" style="background:#0a192f" title="Azul noche"></div><div class="color-swatch" style="background:#a67c52" title="Arena"></div></div></div>
-      <!-- CABALLEROS DESPUÉS -->
       <div class="dress-card"><h3>👔 Caballeros</h3><ul><li>Traje oscuro (negro, azul marino, gris carbón)</li><li>Corbata o pajarita en tonos neutros o mostaza</li><li>Zapatos formales de vestir</li><li>Camisa blanca o marfil</li><li>Opcional: chaleco o smoking</li></ul><div class="palette-title">Paleta sugerida</div><div class="palette-colors"><div class="color-swatch" style="background:#1a1a1a" title="Negro"></div><div class="color-swatch" style="background:#001f3f" title="Azul marino"></div><div class="color-swatch" style="background:#4a4a4a" title="Gris carbón"></div><div class="color-swatch" style="background:#c9a03d" title="Mostaza"></div><div class="color-swatch" style="background:#f5efe6" title="Marfil"></div></div></div>
     </div>
     <p class="dress-note">✨ La recepción será en jardín, considera el calzado. Te pedimos evitar el color blanco. ✨</p>
@@ -1064,30 +1093,8 @@ footer{text-align:center;padding:60px 24px 40px;border-top:1px solid var(--borde
     <div class="footer-date">13 · 02 · 2027 · San Miguel de Allende</div>
     <div style="margin-top:20px"><div class="divider"><div class="div-line"></div><div class="div-gem"></div><div class="div-line"></div></div></div>
     <p style="font-size:11px;font-weight:300;color:var(--text-light);margin-top:16px;letter-spacing:1px">"Y estos tres permanecen: la fe, la esperanza y el amor. Pero el más grande es el amor."</p>
-    <div>
-      <button class="pdf-btn" onclick="downloadPDF()">📄 Descargar PDF / Pase de invitación</button>
-      <button class="admin-btn" onclick="showLogin()">🔐 Panel de novios</button>
-    </div>
+    <button class="admin-btn" onclick="showLogin()">🔐 Panel de novios</button>
   </footer>
-</div>
-
-<!-- PDF CONTENT (hidden, used for PDF generation) -->
-<div id="pdf-content" style="position: absolute; left: -9999px; top: 0; width: 800px; background: white; padding: 40px; font-family: 'Playfair Display', serif; color: #3c2a1f;">
-  <div style="text-align: center; border: 2px solid #c9a03d; padding: 30px; margin: 20px;">
-    <h1 style="font-size: 42px; margin-bottom: 10px; color: #c9a03d;">Sofía <span style="font-size: 28px;">&amp;</span> Andrés</h1>
-    <p style="font-size: 14px; letter-spacing: 4px; margin-bottom: 30px;">INVITACIÓN DE BODA</p>
-    <div style="border-top: 1px solid #e0d5c0; width: 80px; margin: 20px auto;"></div>
-    <p style="font-size: 16px; margin: 20px 0;">Nos complace invitarte a nuestra boda</p>
-    <h2 style="font-size: 28px; margin: 20px 0;">Sábado 13 de Febrero de 2027</h2>
-    <p style="font-size: 16px;">4:00 pm</p>
-    <div style="border-top: 1px solid #e0d5c0; width: 80px; margin: 20px auto;"></div>
-    <p style="font-size: 14px;"><strong>Ceremonia Religiosa</strong><br>Parroquia de San Miguel Arcángel<br>Jardín Principal s/n, San Miguel de Allende</p>
-    <p style="font-size: 14px; margin-top: 15px;"><strong>Recepción</strong><br>Hacienda La Querencia<br>Carr. San Miguel–Dolores km 3</p>
-    <div style="border-top: 1px solid #e0d5c0; width: 80px; margin: 20px auto;"></div>
-    <p style="font-size: 12px; letter-spacing: 2px;">Código de vestimenta: Formal elegante</p>
-    <p style="font-size: 12px; margin-top: 20px; color: #8b7355;">Confirma tu asistencia antes del 31 de Enero de 2027</p>
-    <p style="font-size: 10px; margin-top: 30px; color: #b8a28a;">Con amor, te esperamos</p>
-  </div>
 </div>
 
 <!-- LOGIN OVERLAY -->
@@ -1134,20 +1141,6 @@ function updateCountdown() {
 }
 setInterval(updateCountdown, 1000);
 updateCountdown();
-
-// ==================== PDF GENERATION ====================
-function downloadPDF() {
-  const element = document.getElementById('pdf-content');
-  const opt = {
-    margin: [0.5, 0.5, 0.5, 0.5],
-    filename: 'invitacion_boda_Sofia_Andres.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, letterRendering: true },
-    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-  };
-  html2pdf().set(opt).from(element).save();
-  showToast('📄 PDF generado correctamente');
-}
 
 // ==================== CONFIGURACIÓN ====================
 const PASS = 'boda2026';
