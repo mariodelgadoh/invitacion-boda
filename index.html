@@ -369,7 +369,7 @@ body{
 .quote-text{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,5vw,28px);font-style:italic;font-weight:400;color:var(--text-medium);line-height:1.5;max-width:600px;margin:0 auto 20px;}
 .quote-author{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:300;}
 
-/* PADRES SECTION - DOS FOTOS SEPARADAS (parejas de viejitos) */
+/* PADRES SECTION - DOS FOTOS SEPARADAS */
 .parents-section {
   text-align: center;
   padding: 50px 24px;
@@ -872,8 +872,7 @@ footer{text-align:center;padding:60px 24px 40px;border-top:1px solid var(--borde
     <div class="hero-photo-frame">
       <div class="photo-border"></div>
       <div class="photo-inner">
-        <!-- CAMBIA "novios.jpg" por tu foto local -->
-        <img src="novios.jpg" alt="Sofía y Andrés">
+        <img src="img/novios.jpg" alt="Sofía y Andrés" onerror="this.src='https://placehold.co/400x500/f5efe6/c9a03d?text=Foto+de+novios'">
         <div class="photo-overlay"></div>
       </div>
     </div>
@@ -902,20 +901,18 @@ footer{text-align:center;padding:60px 24px 40px;border-top:1px solid var(--borde
     <p class="quote-author">— Antoine de Saint-Exupéry</p>
   </div>
 
-  <!-- PADRES CON DOS FOTOS SEPARADAS (parejas de viejitos) -->
+  <!-- PADRES CON DOS FOTOS -->
   <div class="parents-section reveal">
     <div class="divider"><div class="div-line"></div><div class="div-gem"></div><div class="div-line"></div></div>
     <div class="parents-grid">
       <div class="parent-card">
-        <!-- CAMBIA "padres-novia.jpg" por tu foto local (pareja de viejitos) -->
-        <img src="padres-novia.jpg" alt="Padres de la novia" class="parent-img">
+        <img src="img/padres-novia.jpg" alt="Padres de la novia" class="parent-img" onerror="this.src='https://placehold.co/160x160/f5efe6/c9a03d?text=Padres+Novia'">
         <h4>Padres de la novia</h4>
         <p>Sofía Flores</p>
         <p>José Flores</p>
       </div>
       <div class="parent-card">
-        <!-- CAMBIA "padres-novio.jpg" por tu foto local (pareja de viejitos) -->
-        <img src="padres-novio.jpg" alt="Padres del novio" class="parent-img">
+        <img src="img/padres-novio.jpg" alt="Padres del novio" class="parent-img" onerror="this.src='https://placehold.co/160x160/f5efe6/c9a03d?text=Padres+Novio'">
         <h4>Padres del novio</h4>
         <p>Sara Sánchez</p>
         <p>Juan Sánchez</p>
@@ -930,10 +927,10 @@ footer{text-align:center;padding:60px 24px 40px;border-top:1px solid var(--borde
     <div class="divider reveal"><div class="div-line"></div><div class="div-gem"></div><div class="div-line"></div></div>
     <h2 class="section-title reveal">Cómo llegamos <em>aquí</em></h2>
     <div class="story-grid">
-      <div class="story-card reveal"><div class="story-img"><img src="historia1.jpg" alt="Primer encuentro"></div><div class="story-content"><div class="story-year">2019</div><div class="story-title">El primer encuentro</div><div class="story-desc">Una tarde de otoño en la Universidad, dos miradas que cruzaron el destino para siempre.</div><div class="story-btn" onclick="showToast('✨ Nos conocimos en la biblioteca. Él buscaba un libro de poesía, yo una novela.')">Leer más →</div></div></div>
-      <div class="story-card reveal"><div class="story-img"><img src="historia2.jpg" alt="Aventura"></div><div class="story-content"><div class="story-year">2021</div><div class="story-title">Nuestra primera aventura</div><div class="story-desc">Recorrimos juntos las calles empedradas de San Miguel y supimos que éramos el hogar del otro.</div><div class="story-btn" onclick="showToast('💫 San Miguel de Allende: atardeceres mágicos y la promesa de un futuro juntos.')">Leer más →</div></div></div>
-      <div class="story-card reveal"><div class="story-img"><img src="historia3.jpg" alt="Propuesta"></div><div class="story-content"><div class="story-year">2024</div><div class="story-title">La propuesta</div><div class="story-desc">Bajo las estrellas del Jardín Principal, con una sola pregunta que cambió todo: ¿Te casas conmigo?</div><div class="story-btn" onclick="showToast('💍 13 de febrero de 2024: Dijo que sí. Y el mundo se detuvo.')">Leer más →</div></div></div>
-      <div class="story-card reveal"><div class="story-img"><img src="historia4.jpg" alt="Boda"></div><div class="story-content"><div class="story-year">2027</div><div class="story-title">Para siempre</div><div class="story-desc">Hoy celebramos el inicio de nuestra vida juntos. Gracias por ser parte de este momento.</div><div class="story-btn" onclick="document.getElementById('rsvp').scrollIntoView({behavior:'smooth'})">Confirmar asistencia →</div></div></div>
+      <div class="story-card reveal"><div class="story-img"><img src="img/historia1.jpg" alt="Primer encuentro" onerror="this.src='https://placehold.co/400x200/f5efe6/c9a03d?text=2019'"></div><div class="story-content"><div class="story-year">2019</div><div class="story-title">El primer encuentro</div><div class="story-desc">Una tarde de otoño en la Universidad, dos miradas que cruzaron el destino para siempre.</div><div class="story-btn" onclick="showToast('✨ Nos conocimos en la biblioteca. Él buscaba un libro de poesía, yo una novela.')">Leer más →</div></div></div>
+      <div class="story-card reveal"><div class="story-img"><img src="img/historia2.jpg" alt="Aventura" onerror="this.src='https://placehold.co/400x200/f5efe6/c9a03d?text=2021'"></div><div class="story-content"><div class="story-year">2021</div><div class="story-title">Nuestra primera aventura</div><div class="story-desc">Recorrimos juntos las calles empedradas de San Miguel y supimos que éramos el hogar del otro.</div><div class="story-btn" onclick="showToast('💫 San Miguel de Allende: atardeceres mágicos y la promesa de un futuro juntos.')">Leer más →</div></div></div>
+      <div class="story-card reveal"><div class="story-img"><img src="img/historia3.jpg" alt="Propuesta" onerror="this.src='https://placehold.co/400x200/f5efe6/c9a03d?text=2024'"></div><div class="story-content"><div class="story-year">2024</div><div class="story-title">La propuesta</div><div class="story-desc">Bajo las estrellas del Jardín Principal, con una sola pregunta que cambió todo: ¿Te casas conmigo?</div><div class="story-btn" onclick="showToast('💍 13 de febrero de 2024: Dijo que sí. Y el mundo se detuvo.')">Leer más →</div></div></div>
+      <div class="story-card reveal"><div class="story-img"><img src="img/historia4.jpg" alt="Boda" onerror="this.src='https://placehold.co/400x200/f5efe6/c9a03d?text=2027'"></div><div class="story-content"><div class="story-year">2027</div><div class="story-title">Para siempre</div><div class="story-desc">Hoy celebramos el inicio de nuestra vida juntos. Gracias por ser parte de este momento.</div><div class="story-btn" onclick="document.getElementById('rsvp').scrollIntoView({behavior:'smooth'})">Confirmar asistencia →</div></div></div>
     </div>
   </section>
 
@@ -961,8 +958,8 @@ footer{text-align:center;padding:60px 24px 40px;border-top:1px solid var(--borde
     <div class="divider reveal"><div class="div-line"></div><div class="div-gem"></div><div class="div-line"></div></div>
     <h2 class="section-title reveal"><em>Sedes</em> del evento</h2>
     <div class="venue-grid">
-      <div class="venue-card reveal-left"><a class="venue-map-placeholder" href="https://maps.google.com/?q=Parroquia+de+San+Miguel+Arcangel" target="_blank"><img src="iglesia.jpg" alt="Parroquia"><span class="venue-map-icon">📍</span><span class="venue-map-link">Ver en Google Maps</span></a><div class="venue-info"><div class="venue-name">Parroquia San Miguel</div><div class="venue-addr">Jardín Principal s/n, Centro, San Miguel de Allende</div></div></div>
-      <div class="venue-card reveal-right"><a class="venue-map-placeholder" href="https://maps.google.com/?q=Hacienda+La+Querencia+San+Miguel+de+Allende" target="_blank"><img src="hacienda.jpg" alt="Hacienda"><span class="venue-map-icon">📍</span><span class="venue-map-link">Ver en Google Maps</span></a><div class="venue-info"><div class="venue-name">Hacienda La Querencia</div><div class="venue-addr">Carr. San Miguel–Dolores km 3, San Miguel de Allende</div></div></div>
+      <div class="venue-card reveal-left"><a class="venue-map-placeholder" href="https://maps.google.com/?q=Parroquia+de+San+Miguel+Arcangel" target="_blank"><img src="img/iglesia.jpg" alt="Parroquia" onerror="this.src='https://placehold.co/800x400/f5efe6/c9a03d?text=Parroquia+San+Miguel'"><span class="venue-map-icon">📍</span><span class="venue-map-link">Ver en Google Maps</span></a><div class="venue-info"><div class="venue-name">Parroquia San Miguel</div><div class="venue-addr">Jardín Principal s/n, Centro, San Miguel de Allende</div></div></div>
+      <div class="venue-card reveal-right"><a class="venue-map-placeholder" href="https://maps.google.com/?q=Hacienda+La+Querencia+San+Miguel+de+Allende" target="_blank"><img src="img/hacienda.jpg" alt="Hacienda" onerror="this.src='https://placehold.co/800x400/f5efe6/c9a03d?text=Hacienda+La+Querencia'"><span class="venue-map-icon">📍</span><span class="venue-map-link">Ver en Google Maps</span></a><div class="venue-info"><div class="venue-name">Hacienda La Querencia</div><div class="venue-addr">Carr. San Miguel–Dolores km 3, San Miguel de Allende</div></div></div>
     </div>
   </section>
 
@@ -1004,7 +1001,7 @@ footer{text-align:center;padding:60px 24px 40px;border-top:1px solid var(--borde
           <div class="fr"><div class="fwrap"><span class="flabel">Nombre completo</span><input type="text" class="finput" id="f-name" readonly disabled style="background:var(--border);"></div><div class="fwrap"><span class="flabel">Acompañantes</span><input type="text" class="finput" id="f-pax-display" readonly disabled></div></div>
           <div class="fr"><div class="fwrap"><span class="flabel">Restricción alimentaria</span><select class="finput" id="f-diet"><option value="ninguna">Ninguna</option><option value="vegetariano">Vegetariano</option><option value="vegano">Vegano</option><option value="sin gluten">Sin gluten</option><option value="alérgico">Alergia alimentaria</option></select></div><div class="fwrap"><span class="flabel">Canción para la pista</span><input type="text" class="finput" id="f-song" placeholder="¿Qué canción no puede faltar?"></div></div>
           <div class="fwrap"><span class="flabel">Mensaje para los novios</span><textarea class="finput" id="f-msg" placeholder="Escríbeles algo especial…" rows="3" style="resize:none"></textarea></div>
-          <div class="rsvp-btns"><button class="btn-yes" onclick="submitRSVP('confirmed')">✓ Confirmo asistencia</button><button class="btn-no" onclick="submitRSVP('declined')">No podré asistir</button></div>
+          <div class="rsvp-btns"><button class="btn-yes" onclick="submitRSVP()">✓ Confirmo asistencia</button><button class="btn-no" onclick="submitRSVPNo()">No podré asistir</button></div>
         </div>
       </div>
       <div class="rsvp-thanks" id="rsvp-thanks"><div class="thanks-icon">✦</div><div class="thanks-title" id="thanks-title">¡Nos vemos pronto!</div><div class="thanks-msg" id="thanks-msg">Tu confirmación ha sido recibida.</div></div>
@@ -1030,8 +1027,8 @@ footer{text-align:center;padding:60px 24px 40px;border-top:1px solid var(--borde
     <div class="create-guest-form"><h3>➕ Crear nuevo invitado</h3><div class="inline-form"><input type="text" id="new-guest-name" class="finput" placeholder="Nombre completo" style="flex:2;"><input type="number" id="new-guest-pax" class="finput" min="1" max="10" value="2" style="width:100px;"><button onclick="createGuest()">Crear y generar enlace</button></div><div id="new-guest-link" style="margin-top: 12px; font-size: 11px; color: var(--gold); word-break: break-all;"></div></div>
     <div class="stats-row"><div class="stat"><div class="stat-n" id="s-total">0</div><div class="stat-l">Total invitados</div></div><div class="stat"><div class="stat-n" id="s-ok" style="color:#8bc34a">0</div><div class="stat-l">Confirmados</div></div><div class="stat"><div class="stat-n" id="s-pax">0</div><div class="stat-l">Personas totales</div></div><div class="stat"><div class="stat-n" id="s-no" style="color:#e57373">0</div><div class="stat-l">No asisten</div></div><div class="stat"><div class="stat-n" id="s-pend">0</div><div class="stat-l">Pendientes</div></div></div>
     <div class="filter-row"><button class="fbtn on" onclick="setF('all',this)">Todos</button><button class="fbtn" onclick="setF('confirmed',this)">Confirmados</button><button class="fbtn" onclick="setF('declined',this)">No asisten</button><button class="fbtn" onclick="setF('pending',this)">Pendientes</button><input type="text" class="srch" id="srch" placeholder="Buscar…" oninput="renderTbl()"></div>
-    <div class="tbl-wrap"><table class="gtbl"><thead><tr><th>#</th><th>Nombre</th><th>Cupo</th><th>Estado</th><th>Confirmación</th><th>Enlace</th><th>Acciones</th></tr></thead><tbody id="tbl-body"></tbody></table><div class="empty-state" id="empty-state">Aún no hay invitados creados</div></div>
-    <p class="adm-note">Cada invitado recibe un enlace único. El número de acompañantes está predefinido y no puede ser cambiado por el invitado.</p>
+    <div class="tbl-wrap"><table class="gtbl"><thead><tr><th>#</th><th>Nombre</th><th>Cupo</th><th>Estado</th><th>Confirmación</th><th>Enlace</th><th>Acciones</th></tr></thead><tbody id="tbl-body"></tbody><table><div class="empty-state" id="empty-state">Aún no hay invitados creados</div></div>
+    <p class="adm-note">Cada invitado recibe un enlace único con sus datos. Las respuestas se guardan en este dispositivo.</p>
   </div>
 </div>
 
@@ -1067,19 +1064,15 @@ updateCountdown();
 
 // ==================== CONFIGURACIÓN ====================
 const PASS = 'boda2026';
-const STORAGE_GUESTS = 'bodaSA_guestList';
 const STORAGE_RESPONSES = 'bodaSA_responses';
 
 let guestList = [];
 let responses = [];
 
 function loadData() {
-  const storedGuests = localStorage.getItem(STORAGE_GUESTS);
-  if(storedGuests) guestList = JSON.parse(storedGuests);
   const storedResponses = localStorage.getItem(STORAGE_RESPONSES);
   if(storedResponses) responses = JSON.parse(storedResponses);
 }
-function saveGuests() { localStorage.setItem(STORAGE_GUESTS, JSON.stringify(guestList)); }
 function saveResponses() { localStorage.setItem(STORAGE_RESPONSES, JSON.stringify(responses)); }
 loadData();
 
@@ -1097,36 +1090,47 @@ function copyText(text) {
 
 function getResponse(guestId) { return responses.find(r => r.guestId == guestId); }
 
+// CREAR INVITADO - el enlace contiene TODOS los datos del invitado
 function createGuest() {
   const name = document.getElementById('new-guest-name').value.trim();
   const pax = parseInt(document.getElementById('new-guest-pax').value);
   if(!name) { showToast('❌ Escribe el nombre del invitado'); return; }
   if(isNaN(pax) || pax < 1) { showToast('❌ Cupo válido (mínimo 1 persona)'); return; }
+  
   const newId = Date.now();
-  guestList.push({ id: newId, name: name, pax: pax });
-  saveGuests();
+  const guest = { id: newId, name: name, pax: pax };
+  guestList.push(guest);
+  
+  // CODIFICAR los datos del invitado en el enlace
+  const guestData = btoa(JSON.stringify({ name: name, pax: pax, id: newId }));
   const baseUrl = window.location.href.split('?')[0];
-  const link = `${baseUrl}?invitado=${encodeURIComponent(name)}&id=${newId}`;
-  document.getElementById('new-guest-link').innerHTML = `🔗 Enlace: <a href="${link}" target="_blank" style="color:var(--gold)">${link}</a><br><span style="font-size:10px;">Copia y envía este enlace.</span>`;
+  const link = `${baseUrl}?g=${guestData}`;
+  
+  document.getElementById('new-guest-link').innerHTML = `🔗 Enlace: <a href="${link}" target="_blank" style="color:var(--gold)">${link}</a><br><span style="font-size:10px;">Copia y envía este enlace al invitado. Contiene sus datos.</span>`;
   document.getElementById('new-guest-name').value = '';
   renderStats(); renderTbl();
-  showToast(`✅ Invitado "${name}" creado con cupo para ${pax} persona(s)`);
+  showToast(`✅ Invitado "${name}" creado. Enlace generado.`);
 }
 
 function copyLink(link) { navigator.clipboard.writeText(link); showToast('📋 Enlace copiado'); }
 
+// LEER invitado desde URL (datos codificados)
 function processUrlGuest() {
   const urlParams = new URLSearchParams(location.search);
-  const guestId = urlParams.get('id');
-  const guestName = urlParams.get('invitado');
-  if(guestId && guestName) {
-    const guest = guestList.find(g => g.id == guestId);
-    if(guest) {
+  const guestDataEncoded = urlParams.get('g');
+  
+  if(guestDataEncoded) {
+    try {
+      const guestData = JSON.parse(atob(guestDataEncoded));
+      const guest = { id: guestData.id, name: guestData.name, pax: guestData.pax };
+      
       document.getElementById('f-name').value = guest.name;
       document.getElementById('f-name').dataset.guestId = guest.id;
+      document.getElementById('f-name').dataset.guestPax = guest.pax;
       document.getElementById('f-pax-display').value = `${guest.pax} ${guest.pax === 1 ? 'persona' : 'personas'}`;
       document.getElementById('guest-display').textContent = guest.name;
       document.getElementById('personal-msg').textContent = `✨ Querido/a ${guest.name.split(' ')[0]}, nos haría muy feliz compartir este día contigo. ✨`;
+      
       const existing = getResponse(guest.id);
       if(existing) {
         document.getElementById('rsvp-form').style.display = 'none';
@@ -1135,50 +1139,154 @@ function processUrlGuest() {
         document.getElementById('thanks-msg').textContent = existing.status === 'confirmed' ? `Confirmaste asistencia para ${existing.pax} persona(s). ¡Te esperamos! ❤️` : `Lamentamos que no puedas acompañarnos. Siempre estarás en nuestros corazones.`;
       }
       return guest;
-    } else showToast('⚠️ Invitado no encontrado');
+    } catch(e) {
+      console.error('Error al decodificar invitado', e);
+      showToast('⚠️ Enlace inválido. Contacta a los novios.');
+    }
   }
   return null;
 }
 
-function submitRSVP(status) {
+function submitRSVP() {
   const guestId = document.getElementById('f-name').dataset.guestId;
+  const guestPax = parseInt(document.getElementById('f-name').dataset.guestPax);
+  const guestName = document.getElementById('f-name').value;
+  
   if(!guestId) { showToast('❌ Usa el enlace que recibiste'); return; }
-  const guest = guestList.find(g => g.id == guestId);
-  if(!guest) return;
   if(getResponse(guestId)) { showToast('⚠️ Ya confirmaste anteriormente'); return; }
-  const response = { guestId: guest.id, name: guest.name, pax: guest.pax, status, diet: document.getElementById('f-diet').value, song: document.getElementById('f-song').value.trim(), msg: document.getElementById('f-msg').value.trim(), date: new Date().toLocaleDateString('es-MX') };
+  
+  const response = { 
+    guestId: guestId, 
+    name: guestName, 
+    pax: guestPax, 
+    status: 'confirmed', 
+    diet: document.getElementById('f-diet').value, 
+    song: document.getElementById('f-song').value.trim(), 
+    msg: document.getElementById('f-msg').value.trim(), 
+    date: new Date().toLocaleDateString('es-MX') 
+  };
   responses.push(response);
   saveResponses();
+  
   document.getElementById('rsvp-form').style.display = 'none';
   document.getElementById('rsvp-thanks').classList.add('show');
-  document.getElementById('thanks-title').textContent = status === 'confirmed' ? `¡Gracias, ${guest.name.split(' ')[0]}! Te esperamos` : 'Gracias por avisarnos';
-  document.getElementById('thanks-msg').textContent = status === 'confirmed' ? `Confirmaste asistencia para ${guest.pax} persona(s). ¡Será un honor!` : 'Lamentamos que no puedas acompañarnos. Siempre estarás en nuestros corazones.';
-  showToast(status === 'confirmed' ? '🎉 ¡Asistencia confirmada!' : '❤️ Gracias por avisarnos');
+  const first = guestName.split(' ')[0];
+  document.getElementById('thanks-title').textContent = `¡Gracias, ${first}! Te esperamos`;
+  document.getElementById('thanks-msg').textContent = `Confirmaste asistencia para ${guestPax} persona(s). ¡Será un honor!`;
+  showToast('🎉 ¡Asistencia confirmada!');
+}
+
+function submitRSVPNo() {
+  const guestId = document.getElementById('f-name').dataset.guestId;
+  const guestPax = parseInt(document.getElementById('f-name').dataset.guestPax);
+  const guestName = document.getElementById('f-name').value;
+  
+  if(!guestId) { showToast('❌ Usa el enlace que recibiste'); return; }
+  if(getResponse(guestId)) { showToast('⚠️ Ya confirmaste anteriormente'); return; }
+  
+  const response = { 
+    guestId: guestId, 
+    name: guestName, 
+    pax: guestPax, 
+    status: 'declined', 
+    diet: document.getElementById('f-diet').value, 
+    song: document.getElementById('f-song').value.trim(), 
+    msg: document.getElementById('f-msg').value.trim(), 
+    date: new Date().toLocaleDateString('es-MX') 
+  };
+  responses.push(response);
+  saveResponses();
+  
+  document.getElementById('rsvp-form').style.display = 'none';
+  document.getElementById('rsvp-thanks').classList.add('show');
+  const first = guestName.split(' ')[0];
+  document.getElementById('thanks-title').textContent = `Gracias por avisar, ${first}`;
+  document.getElementById('thanks-msg').textContent = `Lamentamos que no puedas acompañarnos. Siempre estarás en nuestros corazones.`;
+  showToast('❤️ Gracias por avisarnos');
 }
 
 // ADMIN
 let curFilter = 'all';
 function renderStats() {
-  const total = guestList.length, confirmed = responses.filter(r => r.status === 'confirmed').length, declined = responses.filter(r => r.status === 'declined').length, pending = total - confirmed - declined, totalPax = responses.filter(r => r.status === 'confirmed').reduce((s,r) => s + r.pax, 0);
+  const total = guestList.length;
+  const confirmed = responses.filter(r => r.status === 'confirmed').length;
+  const declined = responses.filter(r => r.status === 'declined').length;
+  const pending = total - (confirmed + declined);
+  const totalPax = responses.filter(r => r.status === 'confirmed').reduce((s,r) => s + r.pax, 0);
   document.getElementById('s-total').textContent = total;
   document.getElementById('s-ok').textContent = confirmed;
   document.getElementById('s-pax').textContent = totalPax;
   document.getElementById('s-no').textContent = declined;
   document.getElementById('s-pend').textContent = pending;
 }
+
 function renderTbl() {
   const search = (document.getElementById('srch')?.value || '').toLowerCase();
-  let list = guestList.filter(g => { if(curFilter === 'confirmed') return responses.some(r => r.guestId === g.id && r.status === 'confirmed'); if(curFilter === 'declined') return responses.some(r => r.guestId === g.id && r.status === 'declined'); if(curFilter === 'pending') return !responses.some(r => r.guestId === g.id); return true; });
+  let list = guestList.filter(g => {
+    if(curFilter === 'confirmed') return responses.some(r => r.guestId == g.id && r.status === 'confirmed');
+    if(curFilter === 'declined') return responses.some(r => r.guestId == g.id && r.status === 'declined');
+    if(curFilter === 'pending') return !responses.some(r => r.guestId == g.id);
+    return true;
+  });
   if(search) list = list.filter(g => g.name.toLowerCase().includes(search));
-  const tbody = document.getElementById('tbl-body'), empty = document.getElementById('empty-state');
+  
+  const tbody = document.getElementById('tbl-body');
+  const empty = document.getElementById('empty-state');
   if(!list.length) { tbody.innerHTML = ''; empty.style.display = 'block'; return; }
   empty.style.display = 'none';
+  
   const baseUrl = window.location.href.split('?')[0];
-  tbody.innerHTML = list.map((g, i) => { const resp = getResponse(g.id); const status = resp ? (resp.status === 'confirmed' ? '<span class="badge b-ok">Confirmado</span>' : '<span class="badge b-no">No asiste</span>') : '<span class="badge" style="background:rgba(212,175,55,.15);color:var(--gold);">Pendiente</span>'; const link = `${baseUrl}?invitado=${encodeURIComponent(g.name)}&id=${g.id}`; return `<tr><td>${i+1}</td><td><strong>${escapeHtml(g.name)}</strong></td><td style="text-align:center">${g.pax}</td><td>${status}</td><td style="font-size:10px">${resp ? resp.date : '—'}</td><td><a href="${link}" target="_blank" style="color:var(--gold);">🔗 Enlace</a> <button class="abtn" style="padding:2px 6px;" onclick="copyLink('${link}')">📋 Copiar</button></td><td><button class="abtn" style="padding:4px 8px;" onclick="deleteGuest(${g.id})">🗑 Eliminar</button></td></tr>`; }).join('');
+  tbody.innerHTML = list.map((g, i) => {
+    const resp = getResponse(g.id);
+    const status = resp ? (resp.status === 'confirmed' ? '<span class="badge b-ok">Confirmado</span>' : '<span class="badge b-no">No asiste</span>') : '<span class="badge" style="background:rgba(212,175,55,.15);color:var(--gold);">Pendiente</span>';
+    const guestData = btoa(JSON.stringify({ name: g.name, pax: g.pax, id: g.id }));
+    const link = `${baseUrl}?g=${guestData}`;
+    return `<tr>
+      <td>${i+1}</td>
+      <td><strong>${escapeHtml(g.name)}</strong></td>
+      <td style="text-align:center">${g.pax}</td>
+      <td>${status}</td>
+      <td style="font-size:10px">${resp ? resp.date : '—'}</td>
+      <td><a href="${link}" target="_blank" style="color:var(--gold);">🔗 Enlace</a> <button class="abtn" style="padding:2px 6px;" onclick="copyLink('${link}')">📋 Copiar</button></td>
+      <td><button class="abtn" style="padding:4px 8px;" onclick="deleteGuest(${g.id})">🗑 Eliminar</button></td>
+    </tr>`;
+  }).join('');
 }
-function deleteGuest(id) { if(confirm('¿Eliminar?')) { guestList = guestList.filter(g => g.id !== id); responses = responses.filter(r => r.guestId !== id); saveGuests(); saveResponses(); renderStats(); renderTbl(); showToast('🗑 Eliminado'); } }
-function setF(filter, btn) { curFilter = filter; document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on')); btn.classList.add('on'); renderTbl(); }
-function exportCSV() { if(!guestList.length) { showToast('No hay datos'); return; } const headers = ['#','Nombre','Cupo','Estado','Canción','Mensaje','Fecha']; const rows = guestList.map((g,i) => { const r = getResponse(g.id); return [i+1, g.name, g.pax, r?.status === 'confirmed' ? 'Confirmado' : (r?.status === 'declined' ? 'No asiste' : 'Pendiente'), r?.song || '', r?.msg || '', r?.date || '']; }); const csv = [headers, ...rows].map(r => r.map(v => `"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n'); const blob = new Blob(['\uFEFF'+csv], {type:'text/csv'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'invitados.csv'; a.click(); showToast('📁 CSV descargado'); }
+
+function deleteGuest(id) {
+  if(confirm('¿Eliminar este invitado?')) {
+    guestList = guestList.filter(g => g.id !== id);
+    responses = responses.filter(r => r.guestId !== id);
+    saveResponses();
+    renderStats();
+    renderTbl();
+    showToast('🗑 Invitado eliminado');
+  }
+}
+
+function setF(filter, btn) {
+  curFilter = filter;
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  renderTbl();
+}
+
+function exportCSV() {
+  if(!guestList.length && !responses.length) { showToast('No hay datos'); return; }
+  const headers = ['#','Nombre','Cupo','Estado','Canción','Mensaje','Fecha'];
+  const rows = guestList.map((g,i) => {
+    const r = getResponse(g.id);
+    return [i+1, g.name, g.pax, r?.status === 'confirmed' ? 'Confirmado' : (r?.status === 'declined' ? 'No asiste' : 'Pendiente'), r?.song || '', r?.msg || '', r?.date || ''];
+  });
+  const csv = [headers, ...rows].map(r => r.map(v => `"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const blob = new Blob(['\uFEFF'+csv], {type:'text/csv'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'invitados_boda.csv';
+  a.click();
+  showToast('📁 CSV descargado');
+}
+
 function showLogin() { document.getElementById('login-overlay').classList.add('show'); setTimeout(()=>document.getElementById('l-pass').focus(),200); }
 function closeLogin() { document.getElementById('login-overlay').classList.remove('show'); document.getElementById('l-pass').value=''; document.getElementById('l-err').style.display='none'; }
 function doLogin() { if(document.getElementById('l-pass').value===PASS) { closeLogin(); document.getElementById('admin-overlay').classList.add('show'); renderStats(); renderTbl(); } else { document.getElementById('l-err').style.display='block'; document.getElementById('l-pass').value=''; document.getElementById('l-pass').focus(); } }
